@@ -28,7 +28,7 @@ body {
 }
 
 body {
-	width: 100vw;
+	
 }
 
 a {
@@ -45,9 +45,10 @@ h1 {
 	line-height: 1.1;
 }
 
-.card {
-	padding: 2em;
+ul {
+	list-style-type: none;
 }
+
 
 button {
 	border: 1px solid transparent;
@@ -64,6 +65,19 @@ button:focus-visible {
 	outline: none;
 }
 
+.btn {
+	padding: .8rem;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
+.btn-primary {
+	background-color: #1a1a1a;
+	color: #fff;
+	width: 100%;
+}
+
 .content {
 	padding: 2em;
 }
@@ -76,11 +90,73 @@ button:focus-visible {
 	height: 90vh;
 }
 
+/* Card Styles */
+.card {
+	width: 400px;
+	padding: 2rem;
+	border: 1px solid #ccc;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #ccc;
+	padding: .5rem 0;
+	color: rgba(100, 108, 255, 1);
+}
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem 0;
+}
+
+
+/* Form Styles */
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	width: 100%;
+	padding: .5rem 0;
+}
+
+.form-control-label {
+	font-size: .9em;
+	font-weight: 500;
+}
+
+.form-control {
+	width: 100%;
+	padding: 1em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	border: 1px solid #1a1a1a;
+	border-radius: 0.2em;
+	transition: border-color 0.25s;
+}
+
 
 /* alerts */
 .error {
 	color: red;
 	font-size: 0.9rem;
+}
+
+.warning {
+	color: rgba(255, 219, 88, 1);
+	font-size: 1rem;
 }
 
 @media (prefers-color-scheme: light) {

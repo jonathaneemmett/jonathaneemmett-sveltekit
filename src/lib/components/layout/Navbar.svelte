@@ -1,20 +1,31 @@
 <script></script>
 
-<nav>
+<nav class="navbar">
 	<div class="logo">
 		<a href="/">
-			<img src="/360_FILL0_wght400_GRAD0_opsz48.svg" alt="" />
+			<img src="/rocket_launch_FILL0_wght400_GRAD0_opsz40.svg" alt="" />
 			<h1>jonathan e. emmett</h1>
 		</a>
 	</div>
-	<ul>
-		<li><a href="/">home</a></li>
-		<li><a href="/tutorials">tutorials</a></li>
+	<ul class="nav-links">
+		<input type="checkbox" id="checkbox_toggle">
+		<label for="checkbox_toggle" class="hamburger">&#9776;</label>
+		<div class="menu">
+			<li><a href="/">home</a></li>
+			<li><a href="/tutorials">tutorials</a></li>
+			<li><a href="/contact">contact</a></li>
+			<li class="dropdown-list">
+				<a href="/">user</a>
+				<ul class="dropdown">
+					<li><a href="/auth/login">login</a></li>
+				</ul>
+			</li>
+		</div>
 	</ul>
 </nav>
 
 <style>
-	nav {
+	.navbar {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
@@ -22,7 +33,7 @@
 		padding: 1rem 2rem;
 		background: rgba(0, 0, 0, 0.2);
 	}
-
+	
 	.logo a {
 		display: flex;
 		justify-content: center;
@@ -40,13 +51,100 @@
 		font-size: 2rem;
 	}
 
-	ul {
+	/* Menu Styles */
+	.menu {
 		display: flex;
-		list-style-type: none;
+		gap: 1rem;
+		font-size: 1rem;
 	}
 
-	li {
-		margin-left: 1rem;
+	.menu li {
+		padding: 0 1rem;
+	}
+
+	.dropdown-list {
+		position: relative;
+	}
+
+	.dropdown {
+		padding: 1em 0;
+		position: absolute;
+		display: none;
+		top: 25px;
+		right: 0;
+	}
+
+	.dropdown li + li {
+		margin-top: .8em;
+	}
+
+	.dropdown li {
 		padding: 0.5rem 1rem;
+		width: 8rem;
+		text-align: center;
+		background: rgba(100, 108, 255, 1);
+	}
+
+	.dropdown li a {
+		color: #fff;
+	}
+	.dropdown li:hover {
+		background: rgba(100, 108, 255, 0.3);
+	}
+
+	.dropdown-list:hover .dropdown {
+		display: block;
+	}
+
+	/* Responsive Styles */
+	input[type=checkbox] {
+		display: none;
+	}
+
+	/* handburger menu */
+	.hamburger {
+		display: none;
+		font-size: 36px;
+		user-select: none;
+	}
+
+	/* media queries */
+	@media (max-width: 768px){
+		.logo {
+			font-size: 20px;
+		}
+		.menu {
+			display: none;
+			position: absolute;
+			margin: 1.8rem 0;
+			right: 0;
+			left: 0;
+			text-align: left;
+			padding: 1.1rem 0;
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+
+		.menu li:hover {
+			display: inline-block;
+			transition: 0.3s ease;
+		}
+
+		.menu li + li {
+			margin-top: .8rem;
+		}
+
+		input[type=checkbox]:checked ~ .menu {
+			display: block;
+		}
+
+		.hamburger {
+			display: block;
+		}
+
+		.dropdown {
+			left: 50%;
+			top: 30%;
+			transform: translateX(35%);
+		}
 	}
 </style>

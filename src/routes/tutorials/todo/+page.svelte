@@ -51,7 +51,7 @@
 					<TodoItem {todo} on:removeTodo={removeTodo} on:setTodoCompleted={setTodoCompleted} />
 				{/each}
 			{:else}
-				<p in:fly={{ x: 200 }} out:fade={200}>No todos to do...</p>
+				<div class="warning" in:fly={{ x: 200 }} >No todos to do...</div>
 			{/if}
 		</div>
 		<div class="card-footer">
@@ -80,27 +80,7 @@
 		font-weight: 600;
 	}
 	
-	.card {
-		width: 400px;
-		padding: 2rem;
-		border: 1px solid #ccc;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-	}
-
-	.card-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-bottom: 1px solid #ccc;
-		padding: .5rem 0;
-		color: rgba(100, 108, 255, 1);
-	}
-
-	.card-content {
-		display: flex;
-		flex-direction: column;
-		padding: 1rem 0;
-	}
+	
 
 	.card-footer .addnew {
 		display: flex;
@@ -113,16 +93,6 @@
 		padding: 1rem;
 		border: none;
 		ouline: none;
-	}
-
-	.btn {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 1rem;
-		border: none;
-		cursor: pointer;
-		outline: none;
 	}
 
 	.btn img {
