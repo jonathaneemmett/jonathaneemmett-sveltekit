@@ -9,7 +9,7 @@
 	</div>
 	<ul>
 		<li><a href="/">home</a></li>
-		<li><a href="/todo">todo</a></li>
+		<li><a href="/tutorials">tutorials</a></li>
 	</ul>
 </nav>
 
@@ -20,6 +20,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem 2rem;
+		background: rgba(0, 0, 0, 0.2);
 	}
 
 	.logo a {

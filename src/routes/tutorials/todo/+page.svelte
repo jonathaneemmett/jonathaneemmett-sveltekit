@@ -1,7 +1,7 @@
 <script>
 	import { fly, fade } from 'svelte/transition';
 	import TodoItem from './TodoItem.svelte';
-	import { todos } from '../../stores/store';
+	import { todos } from '../../../stores/store';
 
 	let addValue = '';
 
@@ -40,7 +40,7 @@
 	};
 </script>
 
-<div class="content">
+<div class="content-center">
 	<div class="card">
 		<div class="card-header">
 			<h2>Todos</h2>
@@ -62,26 +62,29 @@
 				>
 			</div>
 			{#if addValueError}
-				<p class="error" in:fly={{ x: 200 }} out:fade={200}>An empty todo? No can do!</p>
+				<div class="error" in:fly={{ x: 200 }}>An empty todo? No can do!</div>
 			{/if}
 		</div>
 	</div>
+	<p>This is wired up to store only with demo data. You can add, delete, and complete, but a refresh will start over.</p>
 </div>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		height: 90vh;
-	}
 
+	.content-center p {
+		max-width: 400px;
+		text-align: center;
+		padding: 1rem 0;
+		font-size: .9rem;
+		color: rgba(255, 219, 88, 1);
+		font-weight: 600;
+	}
+	
 	.card {
 		width: 400px;
 		padding: 2rem;
 		border: 1px solid #ccc;
-		border-radius: 5px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 	}
 
 	.card-header {
@@ -89,6 +92,8 @@
 		justify-content: space-between;
 		align-items: center;
 		border-bottom: 1px solid #ccc;
+		padding: .5rem 0;
+		color: rgba(100, 108, 255, 1);
 	}
 
 	.card-content {
@@ -105,17 +110,17 @@
 
 	.card-footer .addnew input {
 		width: 100%;
-		padding: 0.5rem;
-		border: 1px solid #ccc;
+		padding: 1rem;
+		border: none;
+		ouline: none;
 	}
 
 	.btn {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0.5rem 1rem;
+		padding: 1rem;
 		border: none;
-		border-radius: 5px;
 		cursor: pointer;
 		outline: none;
 	}

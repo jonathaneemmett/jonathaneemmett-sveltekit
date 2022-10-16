@@ -38,10 +38,10 @@
 
 	.todo input {
 		margin-right: 1rem;
+		padding: 1rem;
 	}
 
 	.todo span {
-		font-size: 1rem;
 		line-height: 25px;
 	}
 
