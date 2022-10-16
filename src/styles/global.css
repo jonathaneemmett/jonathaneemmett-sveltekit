@@ -28,7 +28,7 @@ body {
 }
 
 body {
-	
+	min-width: 100%;
 }
 
 a {
@@ -79,7 +79,7 @@ button:focus-visible {
 }
 
 .content {
-	padding: 2em;
+	padding: 1rem;
 }
 
 .content-center {
@@ -93,6 +93,7 @@ button:focus-visible {
 /* Card Styles */
 .card {
 	width: 400px;
+	margin: 0 auto;
 	padding: 2rem;
 	border: 1px solid #ccc;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
@@ -157,6 +158,20 @@ button:focus-visible {
 .warning {
 	color: rgba(255, 219, 88, 1);
 	font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+
+	.content-center {
+		margin-top: 25px;
+		height: auto;
+	}
+
+	.card {
+		width: 100%;
+	}
+
+
 }
 
 @media (prefers-color-scheme: light) {

@@ -1,4 +1,11 @@
-<script></script>
+<script>
+	let isChecked = false;
+
+	const toggle = () => {
+		isChecked = !isChecked;
+	};
+
+</script>
 
 <nav class="navbar">
 	<div class="logo">
@@ -8,16 +15,16 @@
 		</a>
 	</div>
 	<ul class="nav-links">
-		<input type="checkbox" id="checkbox_toggle">
+		<input type="checkbox" id="checkbox_toggle" bind:checked={isChecked}>
 		<label for="checkbox_toggle" class="hamburger">&#9776;</label>
 		<div class="menu">
-			<li><a href="/">home</a></li>
-			<li><a href="/tutorials">tutorials</a></li>
-			<li><a href="/contact">contact</a></li>
+			<li><a href="/" on:click={toggle}>home</a></li>
+			<li><a href="/tutorials" on:click={toggle}>tutorials</a></li>
+			<li><a href="/contact" on:click={toggle}>contact</a></li>
 			<li class="dropdown-list">
-				<a href="/">user</a>
+				<a href="">user</a>
 				<ul class="dropdown">
-					<li><a href="/auth/login">login</a></li>
+					<li><a href="/auth/login"  on:click={toggle}>login</a></li>
 				</ul>
 			</li>
 		</div>
@@ -110,18 +117,22 @@
 
 	/* media queries */
 	@media (max-width: 768px){
-		.logo {
-			font-size: 20px;
+		.navbar {
+			background: rgba(21, 21, 21, 1);
+		}
+		.logo a h1 {
+			font-size: 1.3rem;
 		}
 		.menu {
 			display: none;
 			position: absolute;
-			margin: 1.8rem 0;
+			margin: 1.5rem 0;
 			right: 0;
 			left: 0;
 			text-align: left;
 			padding: 1.1rem 0;
-			background-color: rgba(0, 0, 0, 0.2);
+			background: rgba(21, 21, 21, 1);
+			z-index: 99999;
 		}
 
 		.menu li:hover {

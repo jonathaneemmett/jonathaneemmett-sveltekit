@@ -17,4 +17,14 @@
         color: rgba(255, 219, 88, 1);
         line-height: 1.5;
     }
+
+    @media screen and (max-width: 768px) {
+        .content-center h1 {
+            font-size: 2rem;
+        }
+
+        .content-center span {
+            font-size: 1.25rem;
+        }
+    }
 </style>
