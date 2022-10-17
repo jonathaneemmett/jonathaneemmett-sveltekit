@@ -1,13 +1,19 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
+	import { user } from '../../../stores/store.js';
+	import { goto } from '$app/navigation';
 	export let isChecked;
 	
 	const dispatch = createEventDispatcher();
 
-	const toggle = () => {
+	function toggle() {
 		isChecked = !isChecked;
 		dispatch('toggle', isChecked);
 	};
+
+	function logout() {
+		dispatch('logout');
+	}
 
 </script>
 
@@ -28,8 +34,13 @@
 			<li class="dropdown-list">
 				<a href="">user</a>
 				<ul class="dropdown">
-					<li><a href="/auth/login" on:click={toggle}>login</a></li>
+					{#if $user?.email}
+						<li><a on:click={logout}>logout</a></li>
+					{:else}
+						<li><a href="/auth/login" on:click={toggle}>login</a></li>
+					{/if}
 				</ul>
+				
 			</li>
 		</div>
 	</ul>

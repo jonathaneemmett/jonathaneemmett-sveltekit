@@ -1,6 +1,10 @@
 import { writable } from 'svelte/store';
 
 const initialState = {
+	user: {
+		email: null,
+		token: null
+	},
 	todos: [
 		{
 			id: 1,
@@ -21,3 +25,4 @@ const initialState = {
 };
 
 export const todos = writable(initialState.todos);
+export const user = writable(initialState.user);

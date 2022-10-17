@@ -7,7 +7,7 @@
 
 	let addValueError = false;
 
-	const addTodo = () => {
+	function addTodo() {
 		if (addValue !== '') {
 			$todos = [
 				...$todos,
@@ -24,7 +24,7 @@
 		}
 	};
 
-	const setTodoCompleted = (e) => {
+	function setTodoCompleted(e){
 		let id = e.detail;
 		$todos = $todos.map((todo) => {
 			if (todo.id === id) {
@@ -34,7 +34,7 @@
 		});
 	};
 
-	const removeTodo = (e) => {
+	function removeTodo(e) {
 		let id = e.detail;
 		$todos = $todos.filter((todo) => todo.id !== id);
 	};
@@ -46,18 +46,16 @@
 			<h2>Todos</h2>
 		</div>
 		<div class="card-content">
-			{#if $todos.length > 0}
-				{#each $todos as todo}
-					<TodoItem {todo} on:removeTodo={removeTodo} on:setTodoCompleted={setTodoCompleted} />
-				{/each}
+			{#each $todos as todo}
+				<TodoItem {todo} on:removeTodo={removeTodo} on:setTodoCompleted={setTodoCompleted} />
 			{:else}
 				<div class="warning" in:fly={{ x: 200 }} >No todos to do...</div>
-			{/if}
+			{/each}
 		</div>
 		<div class="card-footer">
 			<div class="addnew">
 				<input type="text" bind:value={addValue} />
-				<button on:click={addTodo} class="btn"
+				<button on:click={addTodo}
 					><img src="/add_FILL0_wght400_GRAD0_opsz20.svg" alt="" /></button
 				>
 			</div>
@@ -70,8 +68,7 @@
 </div>
 
 <style>
-
-	.content-center p {
+	p {
 		max-width: 400px;
 		text-align: center;
 		padding: 1rem 0;
@@ -79,23 +76,21 @@
 		color: rgba(255, 219, 88, 1);
 		font-weight: 600;
 	}
-	
-	
 
-	.card-footer .addnew {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.card-footer .addnew input {
+	input {
 		width: 100%;
 		padding: 1rem;
 		border: none;
 		ouline: none;
 	}
 
-	.btn img {
+	.addnew {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}	
+
+	button img {
 		filter: brightness(0) invert(1);
 	}
 </style>
