@@ -1,6 +1,6 @@
 <script>
 	import { user } from '../stores/store.js';
-	import { redirect } from '@sveltejs/kit';
+	import { goto } from '$app/navigation';
 	import Navbar from '../lib/components/layout/Navbar.svelte';
 	import '../styles/global.css';
 
@@ -12,8 +12,8 @@
 
 	async function logout() {
 		user.set({email: null, token: null});
-		return redirect(307, '/');
 	}
+
 
 </script>
 

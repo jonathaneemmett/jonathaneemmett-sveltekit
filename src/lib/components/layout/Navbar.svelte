@@ -1,7 +1,9 @@
 <script>
+	import { goto } from '$app/navigation';
+	import { enhance } from '$app/forms';
 	import { createEventDispatcher } from 'svelte';
 	import { user } from '../../../stores/store.js';
-	import { goto } from '$app/navigation';
+	
 	export let isChecked;
 	
 	const dispatch = createEventDispatcher();
@@ -11,8 +13,13 @@
 		dispatch('toggle', isChecked);
 	};
 
-	function logout() {
-		dispatch('logout');
+	async function logout() {
+		user.set({
+				name: '',
+				email: ''
+			}) ;
+
+			await goto('/')
 	}
 
 </script>
@@ -35,7 +42,7 @@
 				<a href="">user</a>
 				<ul class="dropdown">
 					{#if $user?.email}
-						<li><a on:click={logout}>logout</a></li>
+						<li><form method="POST" use:enhance on:submit|preventDefault={logout}><button>Logout</button></form></li>
 					{:else}
 						<li><a href="/auth/login" on:click={toggle}>login</a></li>
 					{/if}
