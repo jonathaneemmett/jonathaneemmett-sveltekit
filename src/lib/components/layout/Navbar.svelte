@@ -1,8 +1,12 @@
 <script>
-	let isChecked = false;
+	import { createEventDispatcher } from 'svelte';
+	export let isChecked;
+	
+	const dispatch = createEventDispatcher();
 
 	const toggle = () => {
 		isChecked = !isChecked;
+		dispatch('toggle', isChecked);
 	};
 
 </script>
@@ -24,7 +28,7 @@
 			<li class="dropdown-list">
 				<a href="">user</a>
 				<ul class="dropdown">
-					<li><a href="/auth/login"  on:click={toggle}>login</a></li>
+					<li><a href="/auth/login" on:click={toggle}>login</a></li>
 				</ul>
 			</li>
 		</div>

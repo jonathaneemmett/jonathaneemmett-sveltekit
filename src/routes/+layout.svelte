@@ -1,10 +1,17 @@
 <script>
 	import Navbar from '../lib/components/layout/Navbar.svelte';
 	import '../styles/global.css';
+
+	let isChecked;
+
+	const handleToggle = (e) => {
+		isChecked = e.detail;
+	};
+
 </script>
 
 <header>
-	<Navbar />
+	<Navbar isChecked={isChecked} on:toggle={handleToggle} />
 </header>
 <main>
 	<slot />
