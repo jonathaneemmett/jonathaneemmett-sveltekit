@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-    import { user } from '../../../stores/store.js';
+   
     import { goto } from '$app/navigation';
     
     let loading = false;
