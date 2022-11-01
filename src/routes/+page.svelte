@@ -1,30 +1,18 @@
-<script></script>
+<script>
+	import EmailSignup from "../components/emailsignup/EmailSignup.svelte";
+import Hero from "../components/layout/Hero.svelte";
 
-<div class="content-center">
-    <h1>Jonathan E. Emmett</h1>
-    <span>Software Engineer | UX/UI Web Enthusist | Martial Practitioner | Buddhist Wanna Be | Not A Runner</span>
-</div>
+</script>
 
+<Hero>
+    <div class="content-center">
+        <h1>Jonathan E. Emmett</h1>
+        <span>Software Engineer | UX/UI Web Enthusist | Martial Practitioner | Buddhist Wanna Be | Not A Runner</span>
+    </div>
+</Hero>
+<EmailSignup />
 <style>
-    .content-center h1 {
-        color: rgba(100, 108, 255, 1);
-    }
-    .content-center span {
-        font-size: 1.5rem;
-        max-width: 600px;
-        text-align: center;
-        font-weight: 600;
-        color: rgba(255, 219, 88, 1);
-        line-height: 1.5;
-    }
+    
 
-    @media screen and (max-width: 768px) {
-        .content-center h1 {
-            font-size: 2rem;
-        }
 
-        .content-center span {
-            font-size: 1.25rem;
-        }
-    }
 </style>

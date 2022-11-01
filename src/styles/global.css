@@ -84,10 +84,21 @@ button:focus-visible {
 
 .content-center {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
 	justify-content: center;
-	height: 90vh;
+	align-items: center;
+	flex-direction: column;
+}
+
+.content-center h1 {
+	color: rgba(100, 108, 255, 1);
+}
+.content-center span {
+	font-size: 1.5rem;
+	max-width: 600px;
+	text-align: center;
+	font-weight: 600;
+	color: rgba(255, 219, 88, 1);
+	line-height: 1.5;
 }
 
 /* Card Styles */
@@ -167,11 +178,23 @@ button:focus-visible {
 		height: auto;
 	}
 
+	.content-center h1 {
+		font-size: 2rem;
+	}
+
+	.content-center span {
+		font-size: 1.25rem;
+	}
+
 	.card {
 		width: 100%;
 	}
 
 
+}
+
+@media screen and (max-width: 768px) {
+	
 }
 
 @media (prefers-color-scheme: light) {
