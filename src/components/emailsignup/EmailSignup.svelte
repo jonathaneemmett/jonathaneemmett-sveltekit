@@ -69,14 +69,16 @@
         background: #fff;
     }
 
-    button {
-        padding: 1rem;
+    button {        
         border: none;
+        outline: none;
+        margin: 0;
         border-radius:0 5px 5px 0;
-        font-size: 1.5rem ;
+        font-size: 1.1rem ;
         color: rgba(255, 219, 88, 1);
         background: rgba(100, 108, 255, 1);
         cursor: pointer;
+        padding: 1.2rem;
     }
 
     .message {
